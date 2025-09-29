@@ -1,0 +1,15 @@
+resources:
+  pipelines:
+    pipeline_dab_dlt:
+      name: DAB_DLT
+      libraries:
+        - glob:
+            include: ../../src/pipelines/DAB_DLT/transformations/**
+      schema: source
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      catalog: ${var.catalog_name}
+      serverless: true
+      root_path: ../../src/pipelines/DAB_DLT
